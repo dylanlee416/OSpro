@@ -225,7 +225,7 @@ fs: $(UPROGS)
 		mkfs.vfat -F 32 fs.img; fi
 	@sudo mount fs.img $(dst)
 	@if [ ! -d "$(dst)/bin" ]; then sudo mkdir $(dst)/bin; fi
-	@sudo cp README $(dst)/README
+#	@sudo cp README $(dst)/README
 	@for file in $$( ls $U/_* ); do \
 		sudo cp $$file $(dst)/$${file#$U/_};\
 		sudo cp $$file $(dst)/bin/$${file#$U/_}; done
